@@ -1,0 +1,8 @@
+<%= @company.name %>
+<%= @company.industry %>
+<%= @company.company_house_number %>
+
+<%= link_to "Edit Company", edit_company_path(@company), class: "btn btn-primary"%>
+
+<%# below is not workning %>
+<%= link_to "Delete Company", company_path(@company), class: "btn", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

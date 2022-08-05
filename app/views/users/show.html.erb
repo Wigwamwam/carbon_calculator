@@ -1,0 +1,15 @@
+<h1>Profile</h1>
+<p><%= @user.first_name%> <%= @user.last_name %></p>
+<p><%= @user.email %></p>
+<p><%= @user.created_at.mday %>/<%= @user.created_at.month %> / <%= @user.created_at.year %></p>
+
+
+<h1>Company</h1>
+
+<p><%= @user.company.name %> </p>
+<p><%= @user.company.industry %></p>
+<p><%= @user.company.company_house_number %></p>
+
+<% if @user.company.nil? %>
+  <%= link_to "Add your company", new_company_path(), class: "btn btn-primary"%>
+<% end %>
