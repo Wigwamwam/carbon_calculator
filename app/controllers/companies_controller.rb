@@ -27,6 +27,7 @@ class CompaniesController < ApplicationController
     redirect_to company_path(@company)
   end
 
+  # this isnt working
   def destroy
     @company = Company.find(params[:id])
     if @company.destroy
@@ -41,5 +42,4 @@ class CompaniesController < ApplicationController
   def company_params
     params.require(:company).permit(:name, :industry, :company_house_number)
   end
-
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_05_142505) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_08_162029) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,7 +35,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_05_142505) do
     t.integer "eletricity_usage"
     t.boolean "renewables"
     t.boolean "owned_vehicles"
-    t.integer "quantity_vehciles"
+    t.integer "quantity_vehicles"
+
+    # need to change boolean to integer for below
+
     t.boolean "office_size"
     t.string "building_heating_type"
     t.integer "building_heating_quantity"
