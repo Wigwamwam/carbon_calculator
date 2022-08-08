@@ -1,0 +1,23 @@
+<h1>Add a report</h1>
+<%= simple_form_for(@report) do |f| %>
+  <%= f.country_select :location_country %>
+  <%= f.input :location_county %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.input :currency, priority: [ "USD - Dollar" ], collection: [ "USD - Dollar", "GBP - Pound", "EUR - Euro" ] %>
+  <%= f.input :revenue %>
+  <%= f.input :employee_count %>
+  <%= f.input :eletricity_usage %>
+  <%= f.input :renewables %>
+  <%= f.input :owned_vehicles %>
+  <%= f.input :quantity_vehicles %>
+  <%= f.input :office_size %>
+  <%= f.input :building_heating_type %>
+  <%= f.input :building_heating_quantity %>
+  <%= f.input :total_expenses %>
+  <%= f.input :flight_expenses %>
+  <%= f.input :train_expenses %>
+  <%= f.input :phone_computer_expenses %>
+  <%= f.input :legal_consultancy_expenses %>
+  <%= f.button :submit %>
+<% end %>
