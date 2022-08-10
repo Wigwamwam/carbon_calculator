@@ -6,10 +6,11 @@
 
 <h1>Company</h1>
 
-<p><%= @user.company.name %> </p>
-<p><%= @user.company.industry %></p>
-<p><%= @user.company.company_house_number %></p>
-
 <% if @user.company.nil? %>
   <%= link_to "Add your company", new_company_path(), class: "btn btn-primary"%>
+<% else %>
+  <p><%= @user.company.name %> </p>
+  <p><%= @user.company.industry %></p>
+  <p><%= @user.company.company_house_number %></p>
+  <%= link_to "See Company", company_path(), class: "btn btn-primary"%>
 <% end %>

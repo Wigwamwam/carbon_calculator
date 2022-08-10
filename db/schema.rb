@@ -38,7 +38,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_08_162029) do
     t.integer "quantity_vehicles"
 
     # need to change boolean to integer for below
-
     t.boolean "office_size"
     t.string "building_heating_type"
     t.integer "building_heating_quantity"

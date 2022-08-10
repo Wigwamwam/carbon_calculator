@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if current_user %>
+  <h1>Welcome back to Sequest, <%= @user.first_name %></h1>
+  <%= link_to "Enter", user_path(current_user), class: "btn btn-primary" %>
+<% else %>
+  <h1>Weclome to Sequest</h1>
+  <p>A free business carbon emissions calculator</p>
+  <div>
+    <%= link_to "Login", new_user_session_path, class: "btn btn-primary"%>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary"%>
+  </div>
+
+<% end %>
