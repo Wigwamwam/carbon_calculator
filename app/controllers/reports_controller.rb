@@ -5,11 +5,14 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
+    @company = current_user.company
   end
 
   def create
+    @company = current_user.company
     @report = Report.new(report_params)
-    @report.user = current_user
+    @report.company = @company
+
     if @report.save
       redirect_to report_path(@report)
     else
@@ -31,9 +34,9 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:location_country, :location_county, :start_date, :end_date, :currency, :revenue,
-                                    :employee_count, :eletricity_usage, :renewables, :owned_vehicles, :quantity_vehciles,
-                                    :quantity_vehicles, :office_size, :building_heating_type, :building_heating_quantity,
-                                    :total_expenses, :flight_expenses, :train_expenses, :phone_computer_expenses,
-                                    :legal_consultancy_expenses)
+                                  :employee_count, :eletricity_usage, :renewables, :owned_vehicles, :quantity_vehciles,
+                                  :quantity_vehicles, :office_size, :building_heating_type, :building_heating_quantity,
+                                  :total_expenses, :flight_expenses, :train_expenses, :phone_computer_expenses,
+                                  :legal_consultancy_expenses)
   end
 end
